@@ -1,7 +1,9 @@
 import React, { createRef, useEffect } from 'react';
 import styled from 'styled-components';
 
-const Canvas = styled.canvas({
+import SkinRender from '../../lib/MineRender/skin/index';
+
+const Canvas = styled.div({
 	width: 500,
 	height: 500,
 	background: '#aaa',
@@ -10,9 +12,8 @@ const Canvas = styled.canvas({
 export default function () {
 	const canvas = createRef();
 	useEffect(() => {
-		//
-		// canvas.xyemae
-		//
+		let skinRender = new SkinRender({/* options */}, canvas.current);
+		skinRender.render("Qugalego");
 	});
 	return <Canvas ref={canvas} />;
 }
